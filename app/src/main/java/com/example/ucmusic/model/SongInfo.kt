@@ -1,0 +1,11 @@
+package com.example.ucmusic.model
+
+import java.io.Serializable
+
+data class SongInfo(
+    val title: String,
+    val artist: String,
+    val album: String?,
+    val year: String?,
+    val genre: String?
+) : Serializable

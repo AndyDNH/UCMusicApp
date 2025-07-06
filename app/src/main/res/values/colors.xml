@@ -1,0 +1,15 @@
+<resources>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_40">#6650a4</color>
+
+    <!-- Otros opcionales para Material 3 -->
+    <color name="purple_80">#D0BCFF</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue_primary">#42A5F5</color>
+    <color name="blue_dark">#1E88E5</color>
+    <color name="green_secondary">#66BB6A</color>
+
+</resources>
