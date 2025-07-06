@@ -25,6 +25,7 @@ import com.example.ucmusic.viewmodel.RecognizerViewModel
 
 @Composable
 fun DetailsScreen(navController: NavHostController, vm: RecognizerViewModel) {
+    // lastRecognizedSong debería contener la información correcta en este punto
     val songInfo = vm.lastRecognizedSong
 
     Column(
@@ -48,23 +49,27 @@ fun DetailsScreen(navController: NavHostController, vm: RecognizerViewModel) {
             modifier = Modifier.size(260.dp)
         )
 
-        if (songInfo != null) {
-            Text("Título: ${songInfo.title}", color = Color.White, fontSize = 18.sp)
-            Text("Artista: ${songInfo.artist}", color = Color.White, fontSize = 18.sp)
-            Text("Álbum: ${songInfo.album ?: "Desconocido"}", color = Color.White, fontSize = 18.sp)
-            Text("Año: ${songInfo.year ?: "Desconocido"}", color = Color.White, fontSize = 18.sp)
+        // Usamos 'let' para mostrar la información solo si songInfo no es nulo.
+        // En teoría, con la nueva lógica, songInfo nunca debería ser nulo aquí.
+        songInfo?.let {
+            Text("Título: ${it.title}", color = Color.White, fontSize = 18.sp)
+            Text("Artista: ${it.artist}", color = Color.White, fontSize = 18.sp)
+            Text("Álbum: ${it.album ?: "Desconocido"}", color = Color.White, fontSize = 18.sp)
+            Text("Año: ${it.year ?: "Desconocido"}", color = Color.White, fontSize = 18.sp)
             Text(
-                "Género: ${songInfo.genre ?: "Desconocido"}",
+                "Género: ${it.genre ?: "Desconocido"}",
                 color = Color.White,
                 fontSize = 18.sp
             )
-        } else {
-            Text("No hay información de canción disponible", color = Color.Gray)
+        } ?: run {
+            // Esto es un fallback, pero no debería ocurrir con la nueva lógica de navegación.
+            Text("Error: No se pudo cargar la información de la canción.", color = Color.Red)
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
+            // navegaUp() es la forma correcta de regresar a la pantalla anterior en la pila
             navController.navigateUp()
         }) {
             Text("Volver")
