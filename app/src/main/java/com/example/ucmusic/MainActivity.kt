@@ -10,8 +10,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ucmusic.screen.DetailsScreen
 import com.example.ucmusic.screen.MainScreen
-// ELIMINADA: import com.example.ucmusic.ui.theme.UCMusicTheme
 import com.example.ucmusic.viewmodel.RecognizerViewModel
+import com.example.ucmusic.screen.SplashScreen
+
 
 class MainActivity : ComponentActivity() {
 
@@ -20,7 +21,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Ahora MyApp está directamente dentro de setContent
             MyApp(recognizerViewModel)
         }
     }
@@ -30,7 +30,16 @@ class MainActivity : ComponentActivity() {
 fun MyApp(recognizerViewModel: RecognizerViewModel) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "main") {
+    NavHost(navController = navController, startDestination = "splash") {
+        composable("splash") {
+            SplashScreen(
+                onSplashComplete = {
+                    navController.navigate("main") {
+                        popUpTo("splash") { inclusive = true }
+                    }
+                }
+            )
+        }
         composable("main") {
             MainScreen(navController = navController, vm = recognizerViewModel)
         }

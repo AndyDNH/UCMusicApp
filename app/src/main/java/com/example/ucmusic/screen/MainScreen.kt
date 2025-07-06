@@ -40,11 +40,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
-    val isEcuadorianSong = false
     val snackbarHostState = remember { SnackbarHostState() }
-
-    val backgroundColor = if (isEcuadorianSong) Color(0xFFFFE500) else Color(0xFFBBDEFB)
-    val textColor = if (isEcuadorianSong) Color(0xFF002147) else Color.Black
 
     LaunchedEffect(Unit) {
         vm.recognitionEvents.collectLatest { event ->
@@ -68,7 +64,7 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
                     )
                 }
                 is RecognitionEvent.Processing -> {
-                    // Estado de procesamiento, ya manejado por el texto del botón
+                    // Opcional: Mostrar progreso o animación aquí
                 }
             }
         }
@@ -77,7 +73,7 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(backgroundColor)
+            .background(Color(0xFFBBDEFB)) // Color fijo, sin cambio
             .padding(16.dp),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -86,15 +82,10 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text(
-            text = if (isEcuadorianSong) "¡Música Ecuatoriana Detectada!" else "",
-            fontSize = 24.sp,
-            color = textColor,
-            fontWeight = FontWeight.Bold
-        )
+        // Quitar cualquier texto de "Música Ecuatoriana Detectada"
 
         Image(
-            painter = painterResource(id = R.drawable.logos2),
+            painter = painterResource(id = R.drawable.logos2), // Logo fijo
             contentDescription = null,
             modifier = Modifier.size(380.dp),
             contentScale = ContentScale.Fit
@@ -102,16 +93,14 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
 
         Text(
             text = "Pulsa el botón para reconocer una canción",
-            color = textColor,
+            color = Color.Black,
             fontSize = 16.sp,
             modifier = Modifier.padding(16.dp),
             textAlign = TextAlign.Center
         )
 
         Button(
-            onClick = {
-                vm.start()
-            },
+            onClick = { vm.start() },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00BFFF)),
             modifier = Modifier.fillMaxWidth(0.8f),
@@ -127,12 +116,11 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
 
         Text(
             text = "Reconociste estas canciones",
-            color = textColor,
+            color = Color.Black,
             fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold
         )
 
-        // *** CAMBIO AQUÍ: Mostrar el historial de canciones ***
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -148,7 +136,6 @@ fun MainScreen(navController: NavHostController, vm: RecognizerViewModel) {
                     modifier = Modifier.align(Alignment.Center)
                 )
             } else {
-                // Usamos LazyColumn para desplazar si hay muchas canciones
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.spacedBy(4.dp)

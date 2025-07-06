@@ -1,11 +1,11 @@
-#Sun Jul 06 09:49:08 ECT 2025
-base.0=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.4=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.5=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.6=C\:\\Users\\belen\\Desktop\\Dispositivos\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sun Jul 06 12:16:21 ECT 2025
+base.0=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.4=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+base.5=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.6=C\:\\Users\\mykec\\OneDrive\\Documentos\\GitHub\\UCMusicApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex
